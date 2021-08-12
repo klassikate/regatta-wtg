@@ -1,0 +1,276 @@
+// USER VARIABLES SECTION
+$blue: #313b66
+$gold: #c39823
+$red: #8f3525
+$fontsize: 16px // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: roboto-oh5, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+@import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+	@font-face
+		font-family: $fname
+		font-style: $fstyle
+		font-weight: $fweight
+		src: url($furl) format('woff2')
+
+@include font('montserrat-sb', bold, 600, '../fonts/Montserrat-SemiBold.ttf')
+@include font('montserrat-eb', bold, 900, '../fonts/Montserrat-ExtraBold.ttf')
+@include font('pt-serif-b', bold, 700, '../fonts/PTSerif-Bold.ttf')
+@include font('montserrat-m', bold, 500, '../fonts/Montserrat-Medium.ttf')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+	color: #666
+
+::selection
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-family: $userfont
+	font-size: $fontsize
+	line-height: $lineheight
+	color: $textcolor
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+header
+	z-index: 100
+	.fixed-line
+		background: #fff
+		padding: 12px 0
+		box-shadow: 4px 4px 8px 0px rgb(102 133 194 / 40%)
+		position: absolute
+		width: 100%
+	.h-now
+		color: $red
+		font-size: 14px
+		font-family: montserrat-eb
+		text-transform: uppercase
+		line-height: 18px
+		padding-top: 5px
+		letter-spacing: 1px 
+	.h-button
+		font-size: 12px
+		padding: 15px
+		background: $red
+		border-radius: 5px
+		border: none
+		color: #fff
+		font-family: montserrat-sb
+nav
+	ul
+		list-style: none
+		display: inline-flex
+		justify-content: space-between
+		padding: 0
+		margin: 0
+		li
+			line-height: 17px
+			a
+				text-decoration: none
+				color: $blue
+				font-family: montserrat-sb
+				font-size: 14px
+.block-1
+	height: 100vh
+	background-image: url('../images/src/header-bg.jpg')
+	-webkit-background-size: cover 
+	-o-background-size: cover 
+	background-size: cover
+	background-repeat: no-repeat
+	padding: 230px 0 80px
+	text-align: center 
+	h1
+		font-family: pt-serif-b
+		text-transform: uppercase
+		color: $gold
+		font-size: 33px
+		line-height: 45px
+		letter-spacing: 3px 
+	.block-1-img
+		img
+			margin: 15px 0
+	.block-1-video
+		font-size: 12px
+		line-height: 17px
+		color: #fff
+		font-family: montserrat-m
+		margin: 145px 0 105px
+		button
+			width: 220px
+			height: 60px
+			border: none
+			border-radius: 5px
+			background: $gold
+			margin-bottom: 25px
+.block-2
+	background: #f9f9f9
+	padding: 100px 0 10px
+	button
+		width: 95%
+		background-color: $red
+		color: #fff
+		padding: 15px 0 
+		border: none
+		border-radius: 5px
+		font-size: 12px
+		font-family: montserrat-sb
+		margin: 25px 15px  
+.block-item
+	text-align: center
+	padding: 20px
+	background: #FFF
+	border-radius: 5px
+	-webkit-box-shadow: 4px 4px 8px 0px rgb(102 133 194 / 40%)
+	-moz-box-shadow: 4px 4px 8px 0px rgba(102, 133, 194, 0.4)
+	box-shadow: 4px 4px 8px 0px rgb(102 133 194 / 40%)
+	img
+		width: 100%
+		height: auto
+	h3
+		color: $blue
+		text-transform: uppercase
+		font-size: 14px
+		letter-spacing: 1px
+		line-height: 18px
+		font-family: montserrat-eb 
+		margin: 25px 0 15px
+	p
+		font-size: 14px
+		line-height: 17px
+		color: #3b393d
+		font-family: montserrat-m
+		font-weight: 500
+.block-3
+	background-image: url('../images/src/panorama_mid.svg')
+	height: 460px
+	background-repeat: no-repeat
+	background-size: cover
+	text-align: center
+	text-transform: uppercase
+	display: flex
+	flex-direction: column
+	div
+		margin: auto
+		.text
+			color: #fff
+			font-size: 14px
+			font-family: montserrat-sb
+			letter-spacing: 1px 
+		.golden-text
+			margin-top: 60px
+.block-4
+	background: #f9f9f9
+	text-align: center
+	.block-item
+		margin-bottom: 35px
+	.block-4-bg
+		padding-bottom: 50px
+		background-repeat: no-repeat
+		background-size: cover
+		background-image: url('../images/src/block-4-bg.jpg')
+		img
+			margin-bottom: 15px
+	h2
+		text-transform: uppercase
+		color: $blue
+		font-size: 25px
+		letter-spacing: 3px
+		line-height: 37px
+		font-family: pt-serif-b
+		margin: 25px 0 20px 0
+	p
+		color: $gold
+		font-size: 21px
+		letter-spacing: 1px
+		line-height: 25px
+		font-family: pt-serif-b
+		margin-bottom: 30px
+.block-5
+	position: relative
+	.no-content
+		height: 200px
+	.white-block
+		text-align: center
+		box-shadow: 4px 4px 8px 0px rgb(102 133 194 / 40%)
+		padding: 50px 0 35px 
+		background: #FFF
+		position: absolute
+		top: 0
+		width: 100%
+	.block-5-p
+		font-size: 14px
+		font-family: montserrat-eb
+		color: $blue
+		text-transform: uppercase
+		letter-spacing: 1px
+	.questions
+		height: 100vh
+		background-size: cover
+		background-repeat: no-repeat
+		background-position: bottom
+		background-image: url('../images/src/block-5-bg.jpg') 
+.golden-text
+	font-size: 33px
+	letter-spacing: 3px
+	text-transform: uppercase
+	font-family: pt-serif-b
+	color: $gold
+	line-height: 45px
+.grey-block
+	background: #f9f9f9
+	padding: 50px 70px 80px 
+.icon-head
+	font-size: 14px
+	letter-spacing: 1px
+	color: $blue
+	text-transform: uppercase
+	font-family: montserrat-eb
+	line-height: 18px
+.mt-100
+	margin-top: 100px 
+.header
+	padding-top: 110px
+	position: absolute
+	width: 100%
+	.h-callback-btn
+		border-right: none
+		border-left: none
+		border-top: none
+		border-bottom: 3px solid $blue
+		background: transparent
+		font-family: montserrat-eb
+		font-size: 14px
+		line-height: 19px
+		color: $blue
+		text-transform: uppercase
+		padding: 0 0 3px 0  
+	.h-phone
+		font-size: 16px
+		line-height: 21px
+		color: $blue
+		font-family: montserrat-eb
+		padding-top: 5px
